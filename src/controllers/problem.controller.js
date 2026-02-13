@@ -4,7 +4,7 @@ function pingProblemController(req, res) {
     return res.json({ message: "problem controller is alive" });
 }
 
-function getProblems(req, res) {
+function getProblems(req, res, next) {
     try {
         //nothing is implemented yet
         throw new NotImplemented("addProblem");
@@ -13,7 +13,7 @@ function getProblems(req, res) {
     }
 }
 
-function getProblem(req, res) {
+function getProblem(req, res, next) {
     try {
         //nothing is implemented yet
         throw new NotImplemented("addProblem");
@@ -31,7 +31,7 @@ function addProblem(req, res, next) {
     }
 }
 
-function deleteProblem(req, res) {
+function deleteProblem(req, res, next) {
     try {
         //nothing is implemented yet
         throw new NotImplemented("addProblem");
@@ -40,7 +40,7 @@ function deleteProblem(req, res) {
     }
 }
 
-function updateProblem(req, res) {
+function updateProblem(req, res, next) {
     try {
         //nothing is implemented yet
         throw new NotImplemented("addProblem");
