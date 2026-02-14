@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 
+
 const { PORT } = require('./config/server.config');
 const apiRouter = require('./routes');
 const BaseError = require('./errors/BaseError');
@@ -27,6 +28,16 @@ app.use(errorHandler);
 
 app.listen(PORT, async () => {
     console.log(`Server is running on port ${PORT}`);
-    await connectToDB();
-    console.log('successfully connected to db');
+
+    try {
+
+        await connectToDB();
+        console.log('successfully connected to db');
+
+
+    } catch (error) {
+        console.log('error connecting to db this is errorb ', error);
+    }
+
+
 });
