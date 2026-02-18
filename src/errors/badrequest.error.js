@@ -1,9 +1,9 @@
-const BaseError = require("./BaseError");
-const {StatusCodes} = require("http-status-codes");
+const BaseError = require("./base.error");
+const { StatusCodes } = require("http-status-codes");
 
-class BadRequest extends BaseError {   
-   constructor(propertyName){
-    super("Bad Request", StatusCodes.BAD_REQUEST, `Invalid value for ${propertyName} provided`);
+class BadRequest extends BaseError {
+   constructor(propertyName, details) {
+      super("BadRequest", StatusCodes.BAD_REQUEST, `Invalid structure for ${propertyName} provided`, details);
    }
 }
 

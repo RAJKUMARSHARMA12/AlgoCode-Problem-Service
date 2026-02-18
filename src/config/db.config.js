@@ -8,6 +8,8 @@ async function connectToDB() {
 
             await mongoose.connect(ATLAS_DB_URL);
 
+
+
         }
     } catch (error) {
         console.log('Unable to connect to the dbserver');
