@@ -10,10 +10,15 @@ function pingProblemController(req, res) {
     return res.json({ message: "problem controller is alive" });
 }
 
-function getProblems(req, res, next) {
+async function getProblems(req, res, next) {
     try {
-        //nothing is implemented yet 
-        throw new NotImplemented("addProblem");
+        const response = await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+            success: true,
+            message: "Problems fetched successfully",
+            error: {},
+            data: response,
+        });
     } catch (error) {
         next(error);
     }
